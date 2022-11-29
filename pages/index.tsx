@@ -4,8 +4,9 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Quiz Zkuy</title>
-        <meta name="description" content="Create Online Exams website for school" />
+        <title>RoomsResto</title>
+        <meta name="description" content="Food App for simple ordering" />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
