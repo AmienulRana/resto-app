@@ -1,13 +1,61 @@
 import { ReactNode } from "react";
+import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
+import HomeIcon from "@mui/icons-material/Home";
+import PersonIcon from "@mui/icons-material/Person";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import { NextRouter, useRouter } from "next/router";
+import Link from "next/link";
 
 interface Props {
   children: ReactNode;
 }
+
+const dataNavbar = [
+  { name: "home", Icon: HomeIcon, active_link: "/home", href: "/home" },
+  {
+    name: "scan Qr",
+    Icon: QrCodeScannerIcon,
+    active_link: "/scann",
+    href: "/scann",
+  },
+  {
+    name: "transaction",
+    Icon: ShoppingBagIcon,
+    active_link: "/transaction",
+    href: "/transaction",
+  },
+  {
+    name: "my account",
+    Icon: PersonIcon,
+    active_link: "/sign-in",
+    href: "/my-account",
+  },
+];
 const LayoutUser = (props: Props) => {
+  const router: NextRouter = useRouter();
+
   return (
     <section className="w-full h-screen flex justify-center">
-      <section className="md:w-96 h-full overflow-y-auto bg-gray-c-100">
-        {props.children}
+      <section className="md:w-96 h-full relative overflow-y-auto bg-gray-c-100">
+        <nav className="absolute left-0 bottom-0 w-full bg-white">
+          <ul className="flex justify-between w-full py-3.5 px-10">
+            {dataNavbar.map((data, index) => (
+              <Link href={data?.href} key={index}>
+                <li
+                  className={[
+                    "flex flex-col justify-center items-center",
+                    data.active_link === router.pathname
+                      ? "text-orange-c-100"
+                      : "text-gray-c-300",
+                  ].join(" ")}
+                >
+                  <data.Icon className="text-3xl" />
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </nav>
+        <main className="h-full">{props.children}</main>
       </section>
     </section>
   );
