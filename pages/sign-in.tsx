@@ -29,7 +29,7 @@ const SignIn = () => {
           classNameContainer="mb-4"
         />
         <Button classNameProps="bg-orange-c-100">Sign in</Button>
-        <Link href="/sign-up">
+        <Link href="/sign-up/user">
           <Button classNameProps="text-white bg-gray-c-300 mt-3">
             Create new account
           </Button>
