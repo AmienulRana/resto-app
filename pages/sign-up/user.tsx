@@ -39,8 +39,9 @@ const SignUp = () => {
           label="Password"
           classNameContainer="mb-4"
         />
+        <Button classNameProps="bg-orange-c-100 mb-3">Countinue</Button>
         <Button classNameProps="bg-orange-c-100 mb-3">
-          Countinue
+          Countinue as Store
         </Button>
         <Typography component="p">
           Already have account?{" "}
