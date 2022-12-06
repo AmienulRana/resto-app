@@ -28,12 +28,11 @@ const SignIn = () => {
           label="Password"
           classNameContainer="mb-4"
         />
-        <Button text="Sign in" classNameProps="bg-orange-c-100" />
+        <Button classNameProps="bg-orange-c-100">Sign in</Button>
         <Link href="/sign-up">
-          <Button
-            text="Create new account"
-            classNameProps="text-white bg-gray-c-300 mt-3"
-          />
+          <Button classNameProps="text-white bg-gray-c-300 mt-3">
+            Create new account
+          </Button>
         </Link>
       </section>
     </LayoutUser>
