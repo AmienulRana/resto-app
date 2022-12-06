@@ -1,9 +1,11 @@
+import React from 'react';
+
 interface Props {
-  text: string;
+  children: React.ReactNode;
   classNameProps?: string;
 }
 
-const Button = ({ text, classNameProps = "" }: Props) => {
+const Button = ({ children, classNameProps = "" }: Props) => {
   return (
     <button
       className={[
@@ -11,7 +13,7 @@ const Button = ({ text, classNameProps = "" }: Props) => {
         classNameProps,
       ].join(" ")}
     >
-      {text}
+      {children}
     </button>
   );
 };
