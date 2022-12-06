@@ -39,7 +39,9 @@ const SignUp = () => {
           label="Password"
           classNameContainer="mb-4"
         />
-        <Button text="Countinue" classNameProps="bg-orange-c-100 mb-3" />
+        <Button classNameProps="bg-orange-c-100 mb-3">
+          Countinue
+        </Button>
         <Typography component="p">
           Already have account?{" "}
           <Link href="/sign-in" className="text-orange-c-100">
