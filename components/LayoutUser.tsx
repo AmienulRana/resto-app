@@ -11,7 +11,7 @@ interface Props {
 }
 
 const dataNavbar = [
-  { name: "home", Icon: HomeIcon, active_link: "/home", href: "/home" },
+  { name: "home", Icon: HomeIcon, active_link: "/", href: "/" },
   {
     name: "scan Qr",
     Icon: QrCodeScannerIcon,
