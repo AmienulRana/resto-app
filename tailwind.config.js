@@ -12,6 +12,9 @@ module.exports = {
         "gray-c-300": "#E2E2E2",
         "orange-c-100": "#FFC700",
       },
+      minWidth: {
+        '48': '200px',
+      }
     },
   },
   plugins: [],

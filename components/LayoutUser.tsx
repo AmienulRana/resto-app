@@ -5,13 +5,15 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
+import { ChevronLeft } from "@mui/icons-material";
+import { Typography } from "@mui/material";
 
 interface Props {
   children: ReactNode;
 }
 
 const dataNavbar = [
-  { name: "home", Icon: HomeIcon, active_link: "/home", href: "/home" },
+  { name: "home", Icon: HomeIcon, active_link: "/", href: "/" },
   {
     name: "scan Qr",
     Icon: QrCodeScannerIcon,
@@ -31,6 +33,28 @@ const dataNavbar = [
     href: "/my-account",
   },
 ];
+
+interface PropsHeader {
+  title: string;
+  text: string;
+  buttonBack: boolean;
+}
+export const Header = (props: PropsHeader) => {
+  return (
+    <section className="px-6 py-5 mb-6 bg-white flex items-center">
+      {props.buttonBack ? <ChevronLeft className="text-2xl" /> : null}
+      <div className="ml-6">
+        <Typography variant="h6" component="h1">
+          {props.title}
+        </Typography>
+        <Typography variant="body1" component="p" className="text-gray-c-200">
+          {props.text}
+        </Typography>
+      </div>
+    </section>
+  );
+};
+
 const LayoutUser = (props: Props) => {
   const router: NextRouter = useRouter();
 
