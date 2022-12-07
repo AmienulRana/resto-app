@@ -5,6 +5,8 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { NextRouter, useRouter } from "next/router";
 import Link from "next/link";
+import { ChevronLeft } from "@mui/icons-material";
+import { Typography } from "@mui/material";
 
 interface Props {
   children: ReactNode;
@@ -32,10 +34,23 @@ const dataNavbar = [
   },
 ];
 
-export const Header = ({ children }: ReactNode) => {
+interface PropsHeader {
+  title: string;
+  text: string;
+  buttonBack: boolean;
+}
+export const Header = (props: PropsHeader) => {
   return (
     <section className="px-6 py-5 mb-6 bg-white flex items-center">
-      {children}
+      {props.buttonBack ? <ChevronLeft className="text-2xl" /> : null}
+      <div className="ml-6">
+        <Typography variant="h6" component="h1">
+          {props.title}
+        </Typography>
+        <Typography variant="body1" component="p" className="text-gray-c-200">
+          {props.text}
+        </Typography>
+      </div>
     </section>
   );
 };
