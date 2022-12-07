@@ -31,6 +31,15 @@ const dataNavbar = [
     href: "/my-account",
   },
 ];
+
+export const Header = ({ children }: ReactNode) => {
+  return (
+    <section className="px-6 py-5 mb-6 bg-white flex items-center">
+      {children}
+    </section>
+  );
+};
+
 const LayoutUser = (props: Props) => {
   const router: NextRouter = useRouter();
 
