@@ -79,7 +79,7 @@ const LayoutUser = (props: Props) => {
             ))}
           </ul>
         </nav>
-        <main className="h-full overflow-y-auto hide-scrollbar">{props.children}</main>
+        <main className="h-full overflow-y-auto hide-scrollbar pb-10">{props.children}</main>
       </section>
     </section>
   );
