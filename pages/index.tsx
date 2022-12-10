@@ -3,8 +3,29 @@ import LayoutUser, { Header } from "../components/LayoutUser";
 import Image from "next/image";
 import { Typography } from "@mui/material";
 import { StarRate, StarOutline } from "@mui/icons-material";
+import { useRef, useEffect, useState } from "react";
+import RatingProduct from "../components/RatingProduct";
+
+const categorys = ["New Taste", "Populer", "Recommended", "Food", "Drinking"];
 
 export default function Home() {
+  let indicatorRef = useRef();
+  const [indicator, setIndicator] = useState({
+    width: 73,
+    position: 24,
+  });
+  const [tabActive, setTabActive] = useState("");
+
+  const handleNavigateTabs = (button, tabActive) => {
+    const buttonWidth = button.target.clientWidth;
+    const buttonPosition = button.target.offsetLeft;
+    setIndicator({ width: buttonWidth, position: buttonPosition });
+    setTabActive(tabActive);
+  };
+  useEffect(() => {
+    setTabActive(categorys[0]);
+  }, []);
+
   return (
     <LayoutUser>
       <Header
@@ -45,7 +66,51 @@ export default function Home() {
         </section>
       </section>
 
-      <Link href="/sign-up/user">Sign up user</Link>
+      <section className="bg-white mt-6">
+        <section className="flex border-b w-full overflow-x-auto hide-scrollbar sticky top-0 border-gray-c-100 px-6 py-4">
+          <span
+            className="absolute bottom-0 rounded border border-black duration-700"
+            ref={indicatorRef}
+            style={{
+              left: `${indicator.position}px`,
+              width: `${indicator.width}px`,
+            }}
+          />
+          {categorys.map((data) => (
+            <button
+              className={[
+                "text-md mr-6 bg-transparent min-w-max duration-700",
+                tabActive === data ? " font-bold" : "",
+              ].join(" ")}
+              onClick={(e) => handleNavigateTabs(e, data)}
+            >
+              {data}
+            </button>
+          ))}
+        </section>
+        <section className="px-6 mt-4 pb-2.5">
+          <Link href="/products/123">
+            <section className="flex justify-between mb-3.5">
+              <section className="flex">
+                <Image
+                  src="/product1.png"
+                  width={60}
+                  height={60}
+                  alt="productc"
+                  className="rounded-md mr-3"
+                />
+                <div>
+                  <Typography component="h2">Soup Bumil</Typography>
+                  <Typography component="p" className="text-gray-c-200 text-sm">
+                    Rp289.000
+                  </Typography>
+                </div>
+              </section>
+              <RatingProduct rating={3.5} />
+            </section>
+          </Link>
+        </section>
+      </section>
     </LayoutUser>
   );
 }
