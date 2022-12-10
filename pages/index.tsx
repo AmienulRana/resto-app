@@ -86,134 +86,24 @@ export default function Home() {
           ))}
         </section>
         <section className="px-6 mt-4 pb-2.5">
-          <section className="flex justify-between mb-3.5">
-            <section className="flex">
-              <Image
-                src="/product1.png"
-                width={60}
-                height={60}
-                alt="productc"
-                className="rounded-md mr-3"
-              />
-              <div>
-                <Typography component="h2">Soup Bumil</Typography>
-                <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
-              </div>
+          <Link href="/products/123">
+            <section className="flex justify-between mb-3.5">
+              <section className="flex">
+                <Image
+                  src="/product1.png"
+                  width={60}
+                  height={60}
+                  alt="productc"
+                  className="rounded-md mr-3"
+                />
+                <div>
+                  <Typography component="h2">Soup Bumil</Typography>
+                  <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
+                </div>
+              </section>
+              <RatingProduct rating={3.5}/>
             </section>
-            <RatingProduct rating={3.5}/>
-          </section>
-          <section className="flex justify-between mb-3.5">
-            <section className="flex">
-              <Image
-                src="/product1.png"
-                width={60}
-                height={60}
-                alt="productc"
-                className="rounded-md mr-3"
-              />
-              <div>
-                <Typography component="h2">Soup Bumil</Typography>
-                <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
-              </div>
-            </section>
-            <RatingProduct rating={3.5}/>
-          </section>
-          <section className="flex justify-between mb-3.5">
-            <section className="flex">
-              <Image
-                src="/product1.png"
-                width={60}
-                height={60}
-                alt="productc"
-                className="rounded-md mr-3"
-              />
-              <div>
-                <Typography component="h2">Soup Bumil</Typography>
-                <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
-              </div>
-            </section>
-            <RatingProduct rating={3.5}/>
-          </section>
-          <section className="flex justify-between mb-3.5">
-            <section className="flex">
-              <Image
-                src="/product1.png"
-                width={60}
-                height={60}
-                alt="productc"
-                className="rounded-md mr-3"
-              />
-              <div>
-                <Typography component="h2">Soup Bumil</Typography>
-                <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
-              </div>
-            </section>
-            <RatingProduct rating={3.5}/>
-          </section>
-          <section className="flex justify-between mb-3.5">
-            <section className="flex">
-              <Image
-                src="/product1.png"
-                width={60}
-                height={60}
-                alt="productc"
-                className="rounded-md mr-3"
-              />
-              <div>
-                <Typography component="h2">Soup Bumil</Typography>
-                <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
-              </div>
-            </section>
-            <RatingProduct rating={3.5}/>
-          </section>
-          <section className="flex justify-between mb-3.5">
-            <section className="flex">
-              <Image
-                src="/product1.png"
-                width={60}
-                height={60}
-                alt="productc"
-                className="rounded-md mr-3"
-              />
-              <div>
-                <Typography component="h2">Soup Bumil</Typography>
-                <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
-              </div>
-            </section>
-            <RatingProduct rating={3.5}/>
-          </section>
-          <section className="flex justify-between mb-3.5">
-            <section className="flex">
-              <Image
-                src="/product1.png"
-                width={60}
-                height={60}
-                alt="productc"
-                className="rounded-md mr-3"
-              />
-              <div>
-                <Typography component="h2">Soup Bumil</Typography>
-                <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
-              </div>
-            </section>
-            <RatingProduct rating={3.5}/>
-          </section>
-          <section className="flex justify-between mb-3.5">
-            <section className="flex">
-              <Image
-                src="/product1.png"
-                width={60}
-                height={60}
-                alt="productc"
-                className="rounded-md mr-3"
-              />
-              <div>
-                <Typography component="h2">Soup Bumil</Typography>
-                <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
-              </div>
-            </section>
-            <RatingProduct rating={3.5}/>
-          </section>
+          </Link>
         </section>
       </section>
     </LayoutUser>
