@@ -10,6 +10,7 @@ import { Typography } from "@mui/material";
 
 interface Props {
   children: ReactNode;
+  navbar?: boolean;
 }
 
 const dataNavbar = [
@@ -41,44 +42,49 @@ interface PropsHeader {
 }
 export const Header = (props: PropsHeader) => {
   return (
-    <section className="px-6 py-5 mb-6 bg-white flex items-center">
-      {props.buttonBack ? <ChevronLeft className="text-2xl" /> : null}
-      <div className="ml-6">
-        <Typography variant="h6" component="h1">
-          {props.title}
-        </Typography>
-        <Typography variant="body1" component="p" className="text-gray-c-200">
-          {props.text}
-        </Typography>
-      </div>
-    </section>
+    <header>
+      <section className="px-6 py-5 mb-6 bg-white flex items-center">
+        {props.buttonBack ? <ChevronLeft className="text-2xl" /> : null}
+        <div className="ml-6">
+          <Typography variant="h6" component="h1">
+            {props.title}
+          </Typography>
+          <Typography variant="body1" component="p" className="text-gray-c-200">
+            {props.text}
+          </Typography>
+        </div>
+      </section>
+    </header>
   );
 };
 
 const LayoutUser = (props: Props) => {
   const router: NextRouter = useRouter();
+  const { navbar = true} = props;
 
   return (
     <section className="w-full h-screen flex justify-center">
       <section className="md:w-96 h-full relative overflow-y-auto bg-gray-c-100">
-        <nav className="absolute left-0 bottom-0 w-full bg-white">
-          <ul className="flex justify-between w-full py-3.5 px-10">
-            {dataNavbar.map((data, index) => (
-              <Link href={data?.href} key={index}>
-                <li
-                  className={[
-                    "flex flex-col justify-center items-center",
-                    data.active_link === router.pathname
-                      ? "text-orange-c-100"
-                      : "text-gray-c-300",
-                  ].join(" ")}
-                >
-                  <data.Icon className="text-3xl" />
-                </li>
-              </Link>
-            ))}
-          </ul>
-        </nav>
+        {navbar && 
+          <nav className="absolute left-0 bottom-0 w-full bg-white">
+            <ul className="flex justify-between w-full py-3.5 px-10">
+              {dataNavbar.map((data, index) => (
+                <Link href={data?.href} key={index}>
+                  <li
+                    className={[
+                      "flex flex-col justify-center items-center",
+                      data.active_link === router.pathname
+                        ? "text-orange-c-100"
+                        : "text-gray-c-300",
+                    ].join(" ")}
+                  >
+                    <data.Icon className="text-3xl" />
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          </nav>
+        }
         <main className="h-full overflow-y-auto hide-scrollbar pb-10">{props.children}</main>
       </section>
     </section>
