@@ -69,7 +69,7 @@ export default function Home() {
       <section className="bg-white mt-6">
         <section className="flex border-b w-full overflow-x-auto hide-scrollbar sticky top-0 border-gray-c-100 px-6 py-4">
           <span
-            className="absolute bottom-0 border border-black duration-300"
+            className="absolute bottom-0 rounded border border-black duration-700"
             ref={indicatorRef}
             style={{
               left: `${indicator.position}px`,
@@ -78,10 +78,13 @@ export default function Home() {
           />
           {categorys.map((data) => (
             <button
-              className="text-md mr-6 bg-transparent min-w-max"
+              className={[
+                "text-md mr-6 bg-transparent min-w-max duration-700",
+                tabActive === data ? " font-bold" : "",
+              ].join(" ")}
               onClick={(e) => handleNavigateTabs(e, data)}
             >
-              <Typography component="p">{data}</Typography>
+              {data}
             </button>
           ))}
         </section>
@@ -98,10 +101,12 @@ export default function Home() {
                 />
                 <div>
                   <Typography component="h2">Soup Bumil</Typography>
-                  <Typography component="p" className="text-gray-c-200 text-sm">Rp289.000</Typography>
+                  <Typography component="p" className="text-gray-c-200 text-sm">
+                    Rp289.000
+                  </Typography>
                 </div>
               </section>
-              <RatingProduct rating={3.5}/>
+              <RatingProduct rating={3.5} />
             </section>
           </Link>
         </section>
