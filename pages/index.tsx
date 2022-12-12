@@ -3,22 +3,22 @@ import LayoutUser, { Header } from "../components/LayoutUser";
 import Image from "next/image";
 import { Typography } from "@mui/material";
 import { StarRate, StarOutline } from "@mui/icons-material";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import RatingProduct from "../components/RatingProduct";
+import React from "react";
 
 const categorys = ["New Taste", "Populer", "Recommended", "Food", "Drinking"];
 
 export default function Home() {
-  let indicatorRef = useRef();
   const [indicator, setIndicator] = useState({
     width: 73,
     position: 24,
   });
   const [tabActive, setTabActive] = useState("");
 
-  const handleNavigateTabs = (button, tabActive) => {
-    const buttonWidth = button.target.clientWidth;
-    const buttonPosition = button.target.offsetLeft;
+  const handleNavigateTabs = (button: any, tabActive: string) => {
+    const buttonWidth: number = button.target.clientWidth;
+    const buttonPosition: number = button.target.offsetLeft;
     setIndicator({ width: buttonWidth, position: buttonPosition });
     setTabActive(tabActive);
   };
@@ -70,14 +70,14 @@ export default function Home() {
         <section className="flex border-b w-full overflow-x-auto hide-scrollbar sticky top-0 border-gray-c-100 px-6 py-4">
           <span
             className="absolute bottom-0 rounded border border-black duration-700"
-            ref={indicatorRef}
             style={{
               left: `${indicator.position}px`,
               width: `${indicator.width}px`,
             }}
           />
-          {categorys.map((data) => (
+          {categorys.map((data, index) => (
             <button
+              key={index}
               className={[
                 "text-md mr-6 bg-transparent min-w-max duration-700",
                 tabActive === data ? " font-bold" : "",
