@@ -13,7 +13,7 @@ const ProductDetail = () => {
   return (
     <Layout navbar={false}>
       <section className="relative bg-white h-full">
-        <ChevronLeftIcon className="absolute top-5 left-4 block w-10 h-10" onClick={() => router.back()}/>
+        <ChevronLeftIcon className="absolute text-white cursor-pointer top-5 left-4 block w-10 h-10" onClick={() => router.back()}/>
         <Image
           src="/product1.png"
           width={300}
