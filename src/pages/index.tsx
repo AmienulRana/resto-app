@@ -17,9 +17,9 @@ export default function Home() {
   });
   const [tabActive, setTabActive] = useState("");
 
-  const handleNavigateTabs = (button: any, tabActive: string) => {
-    const buttonWidth: number = button.target.clientWidth;
-    const buttonPosition: number = button.target.offsetLeft;
+  const handleNavigateTabs = (event: any, tabActive: string) => {
+    const buttonWidth: number = event.target.clientWidth;
+    const buttonPosition: number = event.target.offsetLeft;
     setIndicator({ width: buttonWidth, position: buttonPosition });
     setTabActive(tabActive);
   };
@@ -49,20 +49,7 @@ export default function Home() {
             <Typography component="h2" className="text-base truncate">
               Cherry Healthy
             </Typography>
-            <div className="flex items-center">
-              {[...Array(4)].map((i) => (
-                <StarRate className="w-4 h-4 text-orange-c-100" key={i} />
-              ))}
-              {[...Array(5 - 4)].map((i) => (
-                <StarOutline className="w-4 h-4 text-gray-c-300" key={i} />
-              ))}
-              <Typography
-                component="p"
-                className="text-gray-c-200 text-xs ml-1.5 mb-0"
-              >
-                4.5
-              </Typography>
-            </div>
+            <Rating rating={4.5} />
           </section>
         </section>
       </section>
@@ -91,7 +78,7 @@ export default function Home() {
         </section>
         <section className="px-6 mt-4 pb-2.5">
           <Link href="/products/123">
-            <section className="flex justify-between mb-3.5">
+            <section className="flex pb-3 justify-between mb-3.5">
               <section className="flex">
                 <Image
                   src="/product1.png"
@@ -107,7 +94,7 @@ export default function Home() {
                   </Typography>
                 </div>
               </section>
-              < Rating  rating={3.5} />
+              <Rating rating={3.5} />
             </section>
           </Link>
         </section>
