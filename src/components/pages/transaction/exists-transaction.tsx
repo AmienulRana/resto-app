@@ -15,8 +15,8 @@ const ExitsTransaction = () => {
   return (
     <>
       <Header
-        title="FoodMarket"
-        text="Let’s get some foods"
+        title="Your Orders"
+        text="Wait for the beast meal"
         buttonBack={false}
       />
       <section className="bg-white mt-6">
