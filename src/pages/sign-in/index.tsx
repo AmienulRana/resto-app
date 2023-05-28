@@ -34,7 +34,7 @@ const SignUp = () => {
         />
         <Button classNameProps="bg-orange-c-100 mb-3">Countinue</Button>
         <Typography component="p">
-          Doesn't have account?{" "}
+          Doesn&apos;t have account?{" "}
           <Link href="/sign-up" className="text-orange-c-100">
             Sign up
           </Link>
