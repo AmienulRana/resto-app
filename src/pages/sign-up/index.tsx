@@ -5,12 +5,14 @@ import React from "react";
 import { Layout } from "@/components/common/layout";
 import { Button } from "@/components/common/button";
 import { Input } from "@/components/common/input";
+import { useRouter } from "next/router";
 
 const SignUp = () => {
+  const router  = useRouter();
   return (
     <Layout>
       <section className="px-6 py-5 mb-6 bg-white flex items-center">
-        <ChevronLeft className="text-2xl" />
+        <ChevronLeft className="text-2xl" onClick={() => router.back()} />
         <div className="ml-6">
           <Typography variant="h6" component="h1">
             Sign up
