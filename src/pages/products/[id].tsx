@@ -3,7 +3,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useRouter  } from 'next/router';
+import { useRouter } from "next/router";
 import { Layout } from "@/components/common/layout";
 import { Rating } from "@/components/common/rating";
 import { Button } from "@/components/common/button";
@@ -13,7 +13,10 @@ const ProductDetail = () => {
   return (
     <Layout navbar={false}>
       <section className="relative bg-white h-full">
-        <ChevronLeftIcon className="absolute text-white cursor-pointer top-5 left-4 block w-10 h-10" onClick={() => router.back()}/>
+        <ChevronLeftIcon
+          className="absolute text-white cursor-pointer top-5 left-4 block w-10 h-10"
+          onClick={() => router.back()}
+        />
         <Image
           src="/product1.png"
           width={300}
@@ -55,17 +58,15 @@ const ProductDetail = () => {
           </section>
         </section>
         <section className="absolute flex items-center justify-between bottom-0 left-0 w-full bg-white px-4 py-6">
-            <div>
-                <Typography component="p" className="text-base text-gray-c-200">
-                    Total price
-                </Typography>
-                <Typography component="h2" className="text-lg">
-                    Rp12.289.000
-                </Typography>
-            </div>
-            <Button classNameProps="h-11 w-40 bg-orange-c-100">
-                Order Now
-            </Button>
+          <div>
+            <Typography component="p" className="text-base text-gray-c-200">
+              Total price
+            </Typography>
+            <Typography component="h2" className="text-lg">
+              Rp12.289.000
+            </Typography>
+          </div>
+          <Button classNameProps="h-11 w-40 bg-orange-c-100">Order Now</Button>
         </section>
       </section>
     </Layout>
