@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Layout } from "@/components/common/layout";
-import { Header } from "@/components/common/layout/layout"
+import { Header } from "@/components/common/layout/layout";
 import Image from "next/image";
 import { Typography } from "@mui/material";
 import { StarRate, StarOutline } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { Rating } from "@/components/common/rating";
 import React from "react";
+import { Tabs } from "@/components/common/tabs";
 
 const categorys = ["New Taste", "Populer", "Recommended", "Food", "Drinking"];
 
@@ -55,27 +56,12 @@ export default function Home() {
       </section>
 
       <section className="bg-white mt-6">
-        <section className="flex border-b w-full overflow-x-auto hide-scrollbar sticky top-0 border-gray-c-100 px-6 py-4">
-          <span
-            className="absolute bottom-0 rounded border border-black duration-700"
-            style={{
-              left: `${indicator.position}px`,
-              width: `${indicator.width}px`,
-            }}
-          />
-          {categorys.map((data, index) => (
-            <button
-              key={index}
-              className={[
-                "text-md mr-6 bg-transparent min-w-max duration-700",
-                tabActive === data ? " font-bold" : "",
-              ].join(" ")}
-              onClick={(e) => handleNavigateTabs(e, data)}
-            >
-              {data}
-            </button>
-          ))}
-        </section>
+        <Tabs
+          tabActive={tabActive}
+          setTabActive={setTabActive}
+          labels={categorys}
+        />
+
         <section className="px-6 mt-4 pb-2.5">
           <Link href="/products/123">
             <section className="flex pb-3 justify-between mb-3.5">
